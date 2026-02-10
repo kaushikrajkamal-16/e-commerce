@@ -159,7 +159,7 @@ const Navbar = () => {
     <header>
       <nav>
         {/* Desktop Navbar */}
-        <div className='container px-3.5 py-8 hidden 3xl:flex  justify-between items-center'>
+        <div className='container  py-8 hidden lg:flex  justify-between items-center'>
           <div className='flex items-center gap-2.5'>
             <Link to='/'>
               <img src='/logo.png' alt='logo' />
@@ -191,7 +191,7 @@ const Navbar = () => {
           </div>
         </div>
         {/* Mobile Navbar */}
-        <div className='3xl:hidden container px-3.5 '>
+        <div className='lg:hidden container  '>
           <div className='py-4 flex flex-col'>
             <div className='flex justify-between items-center'>
               <button
@@ -222,7 +222,7 @@ const Navbar = () => {
         </div>
       </nav>
       {/* Product Category Desktop Start  */}
-      <section className='hidden 3xl:block  border-y-2 border-[#EDEDED] py-4 px-3.5'>
+      <section className='hidden lg:block  border-y-2 border-[#EDEDED] py-4'>
         <div className='container flex  gap-3.5'>
           {categories.map((item) => (
             <div key={item.title} className='group relative'>
@@ -241,7 +241,7 @@ const Navbar = () => {
                   </div>
                 </div>
               </Link>
-              <ul className='absolute bg-white top-full left-0 invisible opacity-0 group-hover:visible group-hover:opacity-100  w-48 shadow rounded-2xl'>
+              <ul className='absolute z-50 bg-white top-full left-0 invisible opacity-0 group-hover:visible group-hover:opacity-100  w-48 shadow rounded-2xl'>
                 {item.Children.map((child) => (
                   <li key={child.title}>
                     <Link
@@ -259,7 +259,7 @@ const Navbar = () => {
       </section>
       {/* Mobile Sidebar */}
       <div
-        className={`fixed ${isopen ? "visible  opacity-100" : "invisible  opacity-0"} transition top-0 left-0 w-full h-screen bg-primary/25 backdrop-blur-[1px]`}
+        className={`fixed ${isopen ? "visible z-50  opacity-100" : "invisible  opacity-0"} transition top-0 left-0 w-full h-screen bg-primary/25 backdrop-blur-[1px]`}
       >
         <div
           ref={sideref}
